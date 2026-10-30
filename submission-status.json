@@ -28,12 +28,15 @@
   "repository_visibility": "public",
   "public_upload_confirmed": true,
   "yuque_content_synchronized": true,
-  "github_uploaded": false,
+  "github_uploaded": true,
   "yuque_images_uploaded": false,
   "yuque_login_required": false,
   "yuque_run_id": "155d1066-75c5-4808-a431-50d3e32d3249",
-  "github_upload_state": "publishing",
+  "github_upload_state": "published",
   "yuque_markdown_verified": false,
   "yuque_format_issue_reported_by_user": true,
-  "yuque_latest_blocker": "Remote browser ERR_TIMED_OUT on follow-up format verification"
+  "github_source_commit": "a8571dcccc9a931d94db555a85572203cb5ffb22",
+  "github_uploaded_files": 172,
+  "yuque_current_blocker": "Browser tool could not upload PNG files or find Markdown source/import mode",
+  "yuque_latest_run_id": "4e9a4f8b-f8b9-406b-9baf-ee5b97ef9653"
 }
