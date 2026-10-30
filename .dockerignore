@@ -1,0 +1,16 @@
+*
+!Dockerfile
+!container-entrypoint.sh
+!run_contestant.sh
+!prepare_match.sh
+!decision_config.json
+!source-manifest.json
+!tools/
+!tools/*.py
+!contestant_ws/
+!contestant_ws/src/
+!contestant_ws/src/rmtc_bot/
+!contestant_ws/src/rmtc_bot/**
+**/*.private.json
+**/*.env
+**/__pycache__

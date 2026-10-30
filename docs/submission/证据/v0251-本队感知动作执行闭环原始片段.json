@@ -1,0 +1,58 @@
+{
+  "description": "Actual own-seat raw perception/action/next receipt excerpt, not reconstructed gameplay",
+  "program": "v0.25.1-tail-offer-fix",
+  "cpp_fingerprint": "1bf25f43ac4992484c5e",
+  "source_session_id": "practice-8a36256b33d049eeb8e2cefe1449080d",
+  "perception": {
+    "tick": 1,
+    "session_id": "practice-8a36256b33d049eeb8e2cefe1449080d",
+    "self": {
+      "alive": true,
+      "defending": false,
+      "hp": 100,
+      "last_action": {
+        "action": "move",
+        "effective_direction": "right",
+        "moved": true,
+        "tick": 0
+      },
+      "position": [
+        2,
+        1
+      ],
+      "protected": false,
+      "respawn_in": 0,
+      "robot_id": "A",
+      "team": "A"
+    }
+  },
+  "published_action": {
+    "action": "move",
+    "direction": "right",
+    "session_id": "practice-8a36256b33d049eeb8e2cefe1449080d",
+    "tick": 1
+  },
+  "next_perception": {
+    "tick": 2,
+    "session_id": "practice-8a36256b33d049eeb8e2cefe1449080d",
+    "self": {
+      "alive": true,
+      "defending": false,
+      "hp": 100,
+      "last_action": {
+        "action": "move",
+        "effective_direction": "right",
+        "moved": true,
+        "tick": 1
+      },
+      "position": [
+        3,
+        1
+      ],
+      "protected": false,
+      "respawn_in": 0,
+      "robot_id": "A",
+      "team": "A"
+    }
+  }
+}

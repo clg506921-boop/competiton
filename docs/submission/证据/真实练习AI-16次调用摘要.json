@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "actual_upstream_attempts": 16,
+  "successful": 16,
+  "hard_limit": 16,
+  "peak_concurrency": 1,
+  "max_tokens": 512,
+  "all_request_contracts_match": true,
+  "valid_events": 8,
+  "merged_events": 8,
+  "rejected": 4,
+  "unresolved": 2,
+  "truncated": 0,
+  "usage": {
+    "prompt_tokens": 25682,
+    "completion_tokens": 989,
+    "total_tokens": 26671
+  },
+  "http_ms": {
+    "median": 1184.3581055145478,
+    "p95": 3612.891563010635,
+    "max": 3612.891563010635
+  },
+  "mock_reference_requests": {
+    "B": 12,
+    "C": 12,
+    "D": 12
+  },
+  "rejections": [
+    {
+      "tick": 20,
+      "ai_source_id": "notice-2",
+      "model_output_state": "no_events",
+      "model_rejection_field": "",
+      "model_parse_detail": ""
+    },
+    {
+      "tick": 94,
+      "ai_source_id": "notice-8",
+      "model_output_state": "unresolved",
+      "model_rejection_field": "",
+      "model_parse_detail": ""
+    },
+    {
+      "tick": 102,
+      "ai_source_id": "notice-9",
+      "model_output_state": "items_rejected",
+      "model_rejection_field": "root.events[0].related_event_id",
+      "model_parse_detail": ""
+    },
+    {
+      "tick": 116,
+      "ai_source_id": "notice-11",
+      "model_output_state": "unresolved",
+      "model_rejection_field": "",
+      "model_parse_detail": ""
+    },
+    {
+      "tick": 133,
+      "ai_source_id": "notice-12",
+      "model_output_state": "items_rejected",
+      "model_rejection_field": "root.events[0].related_event_id",
+      "model_parse_detail": ""
+    },
+    {
+      "tick": 137,
+      "ai_source_id": "notice-14",
+      "model_output_state": "items_rejected",
+      "model_rejection_field": "root.events[0].related_event_id",
+      "model_parse_detail": ""
+    },
+    {
+      "tick": 140,
+      "ai_source_id": "notice-13",
+      "model_output_state": "items_rejected",
+      "model_rejection_field": "root.events[0].subject_ids[0]",
+      "model_parse_detail": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "rules_version": "v1.2",
+  "seat": null,
+  "stage": "2",
+  "team_name": "肥鱼说的都队",
+  "referee_host": null,
+  "ros_domain_id": null,
+  "network": "wired",
+  "gateway_url": null,
+  "team_token": null,
+  "model": "deepseek-flash",
+  "max_tokens": null,
+  "ai_quota": null
+}

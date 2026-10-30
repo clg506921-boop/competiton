@@ -1,0 +1,18 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {"name":"release-o2","generator":"Unix Makefiles","binaryDir":"${sourceDir}/../../../../build/release-o2","cacheVariables":{"CMAKE_BUILD_TYPE":"Release","RMTC_OPTIMIZATION":"O2","RMTC_LTO":"OFF","RMTC_SANITIZE":"OFF"}},
+    {"name":"release-o3-lto","generator":"Unix Makefiles","binaryDir":"${sourceDir}/../../../../build/release-o3-lto","cacheVariables":{"CMAKE_BUILD_TYPE":"Release","RMTC_OPTIMIZATION":"O3","RMTC_LTO":"ON","RMTC_SANITIZE":"OFF"}},
+    {"name":"debug-sanitize","generator":"Unix Makefiles","binaryDir":"${sourceDir}/../../../../build/debug-sanitize","cacheVariables":{"CMAKE_BUILD_TYPE":"Debug","RMTC_LTO":"OFF","RMTC_SANITIZE":"ON"}}
+  ],
+  "buildPresets": [
+    {"name":"release-o2","configurePreset":"release-o2","jobs":2},
+    {"name":"release-o3-lto","configurePreset":"release-o3-lto","jobs":2},
+    {"name":"debug-sanitize","configurePreset":"debug-sanitize","jobs":2}
+  ],
+  "testPresets": [
+    {"name":"release-o2","configurePreset":"release-o2","output":{"outputOnFailure":true}},
+    {"name":"release-o3-lto","configurePreset":"release-o3-lto","output":{"outputOnFailure":true}},
+    {"name":"debug-sanitize","configurePreset":"debug-sanitize","output":{"outputOnFailure":true}}
+  ]
+}

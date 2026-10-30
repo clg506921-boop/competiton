@@ -1,0 +1,279 @@
+{
+  "passed": true,
+  "scenario": "custom-A",
+  "seat": "A",
+  "launch": "docker",
+  "source": "/home/ubuntu/projects/RMTC/candidate-v0251-tail-fix",
+  "cpp_strategy_fingerprint": "1bf25f43ac4992484c5e",
+  "real_model_calls": 0,
+  "ai_mode": "mock",
+  "tick_ms": 500,
+  "max_ticks": 500,
+  "port": 8080,
+  "domain": 27,
+  "bot_data_mount_scope": "contestant logs only; referee snapshots remain outside mount",
+  "before_integrity": {
+    "referee_root": "/home/ubuntu/projects/RMTC/practice-v1.1-run/rmtc_practice",
+    "rules_version": "v1.1",
+    "archive_sha256": "b2e92c20829258a1caf1f2224b8b22f2ca6ce6a2e41a20a6ca5752564ff747f1",
+    "files": 16,
+    "all_match": true,
+    "mismatches": [],
+    "original_archive_matches": true
+  },
+  "official_v12_referee_tested": false,
+  "source_version": "v0.25.1-tail-offer-fix",
+  "source_manifest_sha256": "38e8afc08a3da5b21b07632ecafce7c6159d8cc6b5aca2af95c07acc97cbb9a4",
+  "previous_session": "practice-c197940a49d046f89752b76d1819b1b9",
+  "previous_score_file": "/home/ubuntu/projects/RMTC/oct29-real25116/restored-mock-data/practice-c197940a49d046f89752b76d1819b1b9/score.json",
+  "previous_score_sha256": "5033e9c2488f0e1d1a069b97ff3425dffa5b35486954130eacaae8ef512102e4",
+  "stopped_previous_controllers": [],
+  "practice_opponent_seats": [
+    "C",
+    "D"
+  ],
+  "map_config_sha256": "c6eff18b08cc2884967be27d775c158d357c679a62c5ed99289ace849000b2cf",
+  "session_id": "practice-64c7788684604b2297e7c30a76c6bf25",
+  "run_dir": "/home/ubuntu/projects/RMTC/oct29-real25116/restored-mock-data/practice-64c7788684604b2297e7c30a76c6bf25",
+  "friend_container_name": "rmtc-friend-v93-v251v93pk3",
+  "friend_seat": "B",
+  "friend_image": "rmtc-bot:v9.3",
+  "friend_container_id": "39e60737f81b2c85ff5605081aab46891636d57b00373c327073ce1a15e903f8",
+  "friend_reused_compiled_container": true,
+  "friend_registration_confirmed": true,
+  "image_id": "sha256:bc912be2f335ad77fd1b481a08c44268d1a2cf5cddc3916b56868b1d5758b7f5",
+  "container_id": "a8f2468c2f6f2d9e26e6bc90fe24bbe0a2dc4e0081d5a87182f9c484bfd20b8b",
+  "container_name": "rmtc-cross-v251v93small18",
+  "actual_publication_mode": "ASYNCHRONOUS",
+  "own_shm_fds": [],
+  "startup_handshake": "own node read-only service round-trip, official bridge both directions, current-session registration",
+  "visualization_url": "http://127.0.0.1:18089/",
+  "bot_stopped_before_analysis": true,
+  "audit_log_sha256": "1e4fc3eeae254fc3d8316f498ca494aa5ee38b6c1b3351e9aafef6d148e5d2e9",
+  "transport_recovery_attempts": 1,
+  "final": {
+    "team": "A",
+    "team_name": "肥鱼说的都队",
+    "score": 45.0,
+    "resource_value": 60.0,
+    "effective_damage": 1435.0,
+    "mission_completed": 3,
+    "invalid_actions": 0,
+    "hp": 100,
+    "alive": true
+  },
+  "rank": 1,
+  "all_teams": [
+    {
+      "team": "A",
+      "team_name": "肥鱼说的都队",
+      "score": 45.0,
+      "resource_value": 60.0,
+      "effective_damage": 1435.0,
+      "mission_completed": 3,
+      "invalid_actions": 0,
+      "hp": 100,
+      "alive": true
+    },
+    {
+      "team": "D",
+      "team_name": "练习陪练D",
+      "score": 42.5,
+      "resource_value": 50.0,
+      "effective_damage": 860.0,
+      "mission_completed": 3,
+      "invalid_actions": 0,
+      "hp": 30,
+      "alive": true
+    },
+    {
+      "team": "C",
+      "team_name": "练习陪练C",
+      "score": 40.0,
+      "resource_value": 40.0,
+      "effective_damage": 875.0,
+      "mission_completed": 3,
+      "invalid_actions": 0,
+      "hp": 100,
+      "alive": true
+    },
+    {
+      "team": "B",
+      "team_name": "RMTC-v93-B",
+      "score": 22.5,
+      "resource_value": 50.0,
+      "effective_damage": 0.0,
+      "mission_completed": 2,
+      "invalid_actions": 0,
+      "hp": 100,
+      "alive": true
+    }
+  ],
+  "deaths": [
+    46,
+    144,
+    154,
+    272,
+    308,
+    353,
+    384,
+    416
+  ],
+  "actions": {
+    "move": 397,
+    "attack": 76,
+    "wait": 27
+  },
+  "reasons": {
+    "P5_resource_or_collection_mission": 21,
+    "P4_reach_mission": 7,
+    "P7_nearby_firing_position": 68,
+    "P8_explore_unknown": 57,
+    "P2_net_combat_attack": 76,
+    "P0_dead_or_incomplete": 24,
+    "P7_break_diagonal_lockstep": 2,
+    "P7_motion_intercept": 2,
+    "P7_tiebreak_firing_position": 122,
+    "P3_reposition": 1,
+    "P8_refresh_tiebreak_visibility": 119,
+    "P9_no_reachable_gain": 1
+  },
+  "analysis": {
+    "seat": "A",
+    "perceptions": 501,
+    "unique_perception_ticks": 501,
+    "logged_actions": 500,
+    "unique_submitted_window_ticks": 500,
+    "missing_submission_ticks": [],
+    "all_action_sessions_match": true,
+    "terminal_candidate_actions": 0,
+    "associated_receipts": 500,
+    "receipt_association_rate": 1.0,
+    "mismatched_receipt_ticks": [],
+    "protocol_error_ticks": [],
+    "receipt_errors": {
+      "E_BLOCKED": 2
+    },
+    "moved_receipts": 395,
+    "action_types": {
+      "move": 397,
+      "attack": 76,
+      "wait": 27
+    },
+    "own_unique_decisions": 500,
+    "own_parse_errors": 0,
+    "primary_receipt_source": "contestant subscriber summaries of official self.last_action; independent observer coverage is reported separately",
+    "primary_associated_receipts": 500,
+    "primary_receipt_association_rate": 1.0,
+    "primary_mismatched_ticks": [],
+    "primary_protocol_error_ticks": [],
+    "primary_missing_receipt_ticks": [],
+    "primary_receipt_statuses": {
+      "confirmed": 498,
+      "move_failed": 2
+    },
+    "observer_missing_actions_with_executed_move_receipts": [],
+    "own_log_dropped": 0,
+    "application_timing": {
+      "samples": 500,
+      "p99_ms": 23.575955999999998,
+      "max_ms": 32.276997,
+      "scope": "callback-entry through publish; excludes upstream DDS and referee settlement"
+    },
+    "final_public_self": {
+      "alive": true,
+      "defending": false,
+      "hp": 100,
+      "last_action": {
+        "action": "wait",
+        "moved": false,
+        "tick": 499
+      },
+      "position": [
+        4,
+        15
+      ],
+      "protected": false,
+      "respawn_in": 0,
+      "robot_id": "A",
+      "team": "A"
+    },
+    "stage": 2
+  },
+  "ai_audit_records": 114,
+  "own_local_ai_successful": 37,
+  "events_validated": 0,
+  "events_applied": 0,
+  "official_stop_after_settlement": true,
+  "friend_official_observer_analysis": {
+    "seat": "B",
+    "perceptions": 501,
+    "unique_perception_ticks": 501,
+    "logged_actions": 501,
+    "unique_submitted_window_ticks": 500,
+    "missing_submission_ticks": [],
+    "all_action_sessions_match": true,
+    "terminal_candidate_actions": 1,
+    "associated_receipts": 500,
+    "receipt_association_rate": 1.0,
+    "mismatched_receipt_ticks": [],
+    "protocol_error_ticks": [],
+    "receipt_errors": {
+      "E_STATE": 3,
+      "E_BLOCKED": 5
+    },
+    "moved_receipts": 448,
+    "action_types": {
+      "move": 456,
+      "defend": 29,
+      "wait": 15
+    },
+    "own_unique_decisions": 0,
+    "own_parse_errors": 0,
+    "primary_receipt_source": "contestant subscriber summaries of official self.last_action; independent observer coverage is reported separately",
+    "primary_associated_receipts": 0,
+    "primary_receipt_association_rate": null,
+    "primary_mismatched_ticks": [],
+    "primary_protocol_error_ticks": [],
+    "primary_missing_receipt_ticks": [],
+    "primary_receipt_statuses": {},
+    "observer_missing_actions_with_executed_move_receipts": [],
+    "own_log_dropped": 0,
+    "application_timing": {
+      "samples": 0,
+      "p99_ms": null,
+      "max_ms": null,
+      "scope": "callback-entry through publish; excludes upstream DDS and referee settlement"
+    },
+    "final_public_self": {
+      "alive": true,
+      "defending": false,
+      "hp": 100,
+      "last_action": {
+        "action": "move",
+        "effective_direction": "left",
+        "moved": true,
+        "tick": 499
+      },
+      "position": [
+        10,
+        3
+      ],
+      "protected": false,
+      "respawn_in": 0,
+      "robot_id": "B",
+      "team": "B"
+    },
+    "stage": 2
+  },
+  "own_referee_real_successful": 0,
+  "after_integrity": {
+    "referee_root": "/home/ubuntu/projects/RMTC/practice-v1.1-run/rmtc_practice",
+    "rules_version": "v1.1",
+    "archive_sha256": "b2e92c20829258a1caf1f2224b8b22f2ca6ce6a2e41a20a6ca5752564ff747f1",
+    "files": 16,
+    "all_match": true,
+    "mismatches": [],
+    "original_archive_matches": true
+  }
+}

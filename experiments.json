@@ -1,0 +1,39 @@
+{
+  "baseline_design": "rmtc-design-v1.1.1-reviewed",
+  "status": "v0.12 deadline-safe pickup detours; three code iterations, three matched games each; baseline and failed iteration retained",
+  "policies": [
+    "greedy",
+    "lookahead",
+    "frontier"
+  ],
+  "dispatch": [
+    "immediate",
+    "mailbox"
+  ],
+  "build_profiles": [
+    "release-o2",
+    "release-o3-lto",
+    "debug-sanitize"
+  ],
+  "default": {
+    "policy": "greedy",
+    "dispatch": "immediate",
+    "build_profile": "release-o2"
+  },
+  "rules": [
+    "All dispatch alternatives use the mandated RELIABLE/VOLATILE/KEEP_LAST(1) public ROS interface.",
+    "Research flags are frozen before formal stages; they are not approved manual decision_type changes.",
+    "Use sanitizer builds for correctness checks, never for score or latency comparisons with Release.",
+    "Do not execute a Cartesian product of variants as matches. Preserve the three-attempt scenario budget.",
+    "Choose a Release build/dispatch offline first; compare up to three collector policies under identical match conditions later.",
+    "No variant modifies the referee, official package files, Tick period or score calculation."
+  ],
+  "supplemental_reference": "rmtc-design-v1.1.2: equivalent schema v3 and fixtures",
+  "test_execution_ledger": "test-execution-ledger.json",
+  "test_policy": "docs/verification-policy.md",
+  "event_prompt_variants": [
+    "baseline",
+    "compact",
+    "example"
+  ]
+}

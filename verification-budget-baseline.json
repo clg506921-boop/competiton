@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "date": "2026-10-22",
+  "rule": "Per real code iteration and fixed scenario, at most 3 executions; compare means and variability.",
+  "user_clarification": "代码迭代重置次数，取平均来证实迭代的效果",
+  "historical_v1": {
+    "schema_version": 1,
+    "date": "2026-10-22",
+    "official_match_executions": {
+      "own-stage1-default": 1,
+      "own-stage2-three-companions": 2,
+      "own-stage2-real-solo": 1,
+      "own-stage1-size20": 1,
+      "own-stage1-precheck-B-v09": 1,
+      "own-stage1-precheck-B-v09-corrected": 1
+    },
+    "rule": "Restoring a ZIP, changing a version or renaming a scenario never resets spent executions.",
+    "stage1_campaign_total": 4,
+    "stage2_campaign_total": 3,
+    "stage1_one_off_extra_consumed": true,
+    "automatic_additional_matches_allowed": false
+  },
+  "iterations": {
+    "731866faf90fdf7bcfe0": {
+      "own-stage2-size24-real-three-companions": 3
+    },
+    "0ced0e48a23b5c06c07a": {
+      "own-stage2-size24-real-three-companions": 3
+    },
+    "69c791d47ed1b3606bf1": {
+      "own-stage2-size24-real-three-companions": 3
+    }
+  }
+}

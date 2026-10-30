@@ -1,0 +1,39 @@
+{
+  "report_baseline": "v0.25.1-tail-offer-fix",
+  "baseline_cpp_fingerprint": "1bf25f43ac4992484c5e",
+  "baseline_source_manifest_sha256": "38e8afc08a3da5b21b07632ecafce7c6159d8cc6b5aca2af95c07acc97cbb9a4",
+  "formal_team_name": null,
+  "captain": null,
+  "team_id": null,
+  "members": [
+    {
+      "name": "蔡礼格",
+      "work": "制定决策方案、初步代码编写、网关搭建"
+    },
+    {
+      "name": "李宸梓",
+      "work": "后期调试、代码迭代修改及优化"
+    }
+  ],
+  "repository_url": "https://github.com/clg506921-boop/competiton",
+  "yuque_url": "https://www.yuque.com/ahz56/cbis6h/nlgzqv1hvhksyz2c",
+  "final_version": null,
+  "final_commit": null,
+  "final_runtime_path": null,
+  "formal_max_tokens_from_handbook": 512,
+  "final_precheck_screenshots_complete": false,
+  "remote_created": true,
+  "officially_submitted": false,
+  "ongoing_optimization": "Skipped in report at user request",
+  "repository_visibility": "public",
+  "public_upload_confirmed": true,
+  "yuque_content_synchronized": true,
+  "github_uploaded": false,
+  "yuque_images_uploaded": false,
+  "yuque_login_required": false,
+  "yuque_run_id": "155d1066-75c5-4808-a431-50d3e32d3249",
+  "github_upload_state": "publishing",
+  "yuque_markdown_verified": false,
+  "yuque_format_issue_reported_by_user": true,
+  "yuque_latest_blocker": "Remote browser ERR_TIMED_OUT on follow-up format verification"
+}

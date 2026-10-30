@@ -1,0 +1,1410 @@
+{
+  "schema_version": 3,
+  "notes": "模板样例用于Prompt few-shot与gtest，运行时策略不得读取stage2.json或按模板句式解析公告。所有*_interval均为左闭右开[from,until)，until为首个不再生效的Tick；null表示不产生效果。",
+  "cases": [
+    {
+      "id": "protocol-explosion-50-to-75",
+      "origin": "CONTESTANT_PROTOCOL.md §3 感知 event_text 原文",
+      "source_text": "第 50 Tick：随机事件预告：25 Tick 后（Tick 75），左上角 [4,4]、右下角 [9,9] 的矩形区域将发生爆炸，范围内所有存活战车扣除 80 HP；出生保护免疫。",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 75,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                4,
+                4
+              ],
+              "max": [
+                9,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "damage": 80,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "semantic_checks": {
+        "announce_tick": 50,
+        "delay_ticks": 25,
+        "start_tick": 75
+      }
+    },
+    {
+      "id": "template-illusion-forecast",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "第 50 Tick：随机事件预告：Tick 55（5 Tick 后），矩形 [8, 3] 至 [12, 7] 内战车将中幻术，接下来 12 Tick 移动上下、左右均颠倒；复活不解除。",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "illusion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 55,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                8,
+                3
+              ],
+              "max": [
+                12,
+                7
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "effect_ticks": 12,
+              "moves_only": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "semantic_checks": {
+        "derived_effect_end_tick": 67
+      }
+    },
+    {
+      "id": "template-angel-two-points",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "第 95 Tick：随机事件预告：5 Tick 后（Tick 100），天使恩泽将在 [[3, 9], [14, 9]] 出现并存在 16 Tick。进入点位可获得持续 8 Tick、每 Tick 回血 5 HP 的增益，上限 100 HP；离开再进入可以刷新。",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "angel",
+            "phase": "forecast",
+            "announce_tick": 95,
+            "start_tick": 100,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "points",
+              "at": [
+                [
+                  3,
+                  9
+                ],
+                [
+                  14,
+                  9
+                ]
+              ]
+            },
+            "trigger": "entry",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 16,
+              "entry_window_ticks": 16,
+              "heal_ticks": 8,
+              "heal_per_tick": 5,
+              "hp_cap": 100
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "semantic_checks": {
+        "derived_end_tick": 116,
+        "derived_trigger_end_tick": 116
+      }
+    },
+    {
+      "id": "template-unrivaled-square",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "第 145 Tick：随机事件预告：Tick 150（5 Tick 后），地图中央 [9, 9] 将出现 3×3 堡垒并存在 24 Tick。连续停留 4 Tick 将获得「天下无双」：ATTACK 命中自身周围5×5内所有敌人，普通伤害 35 HP、防御伤害 7 HP；增益于堡垒消失时结束。",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "unrivaled",
+            "phase": "forecast",
+            "announce_tick": 145,
+            "start_tick": 150,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "square",
+              "center": [
+                9,
+                9
+              ],
+              "size": 3
+            },
+            "trigger": "dwell",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 24,
+              "required_dwell_ticks": 4,
+              "attack_size": 5,
+              "damage": 35,
+              "defended_damage": 7
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "semantic_checks": {
+        "derived_rect": [
+          [
+            8,
+            8
+          ],
+          [
+            10,
+            10
+          ]
+        ],
+        "derived_attack_radius": 2,
+        "derived_end_tick": 174
+      }
+    },
+    {
+      "id": "template-world-split",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "第 195 Tick：随机事件预告：Tick 200（5 Tick 后），以 [8, 8] 为交点的整行整列将生成十字障碍，存在 10 Tick。障碍生成时十字线上的战车直接死亡并立即回出生点重生，已有增益和负面效果保留。",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "world_split",
+            "phase": "forecast",
+            "announce_tick": 195,
+            "start_tick": 200,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "cross",
+              "at": [
+                8,
+                8
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 10
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "semantic_checks": {
+        "derived_end_tick": 210
+      }
+    },
+    {
+      "id": "template-chili-two-points",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "第 245 Tick：随机事件预告：5 Tick 后（Tick 250），火爆辣椒点 [[5, 6], [12, 11]] 出现并存在 16 Tick。每次进入点位会触发仅1 Tick的整行整列十字火线，交点自身除外，线上战车扣除 30 HP。停留不重复触发，出生保护免疫。",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "chili",
+            "phase": "forecast",
+            "announce_tick": 245,
+            "start_tick": 250,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "points",
+              "at": [
+                [
+                  5,
+                  6
+                ],
+                [
+                  12,
+                  11
+                ]
+              ]
+            },
+            "trigger": "entry",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 16,
+              "damage": 30,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true
+    },
+    {
+      "id": "template-reflection",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "第 295 Tick：随机事件预告：Tick 300（5 Tick 后）起，全场进入持续 16 Tick 的「洁身自好」：攻击正在防御的敌人会让攻击者自身受到 12 HP 伤害，并且无法伤害该目标。",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "reflection",
+            "phase": "forecast",
+            "announce_tick": 295,
+            "start_tick": 300,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "global"
+            },
+            "trigger": "attack_defender",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 16,
+              "reflect_damage": 12
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true
+    },
+    {
+      "id": "rules-8.9-vulnerability",
+      "origin": "rules.txt §8.9 计算示例（触发窗口取自规则“前20 Tick”：[185,205)）",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "vulnerability",
+            "phase": "forecast",
+            "announce_tick": null,
+            "start_tick": 185,
+            "at_tick": null,
+            "end_tick": 215,
+            "trigger_end_tick": 205,
+            "effect_end_tick": 215,
+            "area": {
+              "kind": "global"
+            },
+            "trigger": "movement",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "movement_window_ticks": 20,
+              "multiplier": 2,
+              "vulnerability_ticks": 30
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true
+    },
+    {
+      "id": "activated-without-tick-links-forecast",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程；生效公告不含Tick",
+      "source_text": "幻术生效，矩形 [8, 3] 至 [12, 7] 内战车的移动方向被颠倒。",
+      "request_known_events": [
+        {
+          "event_id": "explosion-1",
+          "type": "explosion",
+          "phase": "forecast",
+          "start_tick": 40,
+          "area": {
+            "kind": "rect",
+            "min": [
+              3,
+              3
+            ],
+            "max": [
+              7,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "illusion-1",
+          "type": "illusion",
+          "phase": "forecast",
+          "start_tick": 55,
+          "area": {
+            "kind": "rect",
+            "min": [
+              8,
+              3
+            ],
+            "max": [
+              12,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "angel-1",
+          "type": "angel",
+          "phase": "forecast",
+          "start_tick": 100,
+          "area": {
+            "kind": "points",
+            "at": [
+              [
+                3,
+                9
+              ],
+              [
+                14,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "illusion",
+            "phase": "activated",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": null,
+            "trigger": null,
+            "subject_ids": null,
+            "related_event_id": "illusion-1",
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "runtime": {
+        "start_tick_from": "illusion-1"
+      }
+    },
+    {
+      "id": "granted-self-illusion-expiry",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "A 号战车获得负面效果「幻术」，移动方向颠倒，Tick 67 解除，复活后仍保留。",
+      "request_known_events": [
+        {
+          "event_id": "explosion-1",
+          "type": "explosion",
+          "phase": "forecast",
+          "start_tick": 40,
+          "area": {
+            "kind": "rect",
+            "min": [
+              3,
+              3
+            ],
+            "max": [
+              7,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "illusion-1",
+          "type": "illusion",
+          "phase": "forecast",
+          "start_tick": 55,
+          "area": {
+            "kind": "rect",
+            "min": [
+              8,
+              3
+            ],
+            "max": [
+              12,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "angel-1",
+          "type": "angel",
+          "phase": "forecast",
+          "start_tick": 100,
+          "area": {
+            "kind": "points",
+            "at": [
+              [
+                3,
+                9
+              ],
+              [
+                14,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "illusion",
+            "phase": "granted",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": 67,
+            "area": null,
+            "trigger": null,
+            "subject_ids": [
+              "A"
+            ],
+            "related_event_id": "illusion-1",
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "runtime": {
+        "at_tick": "null unless occurrence time is established; observation tick is separate"
+      }
+    },
+    {
+      "id": "granted-refresh-angel",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "A 号战车再次进入天使点，回血增益刷新至 Tick 125。",
+      "request_known_events": [
+        {
+          "event_id": "explosion-1",
+          "type": "explosion",
+          "phase": "forecast",
+          "start_tick": 40,
+          "area": {
+            "kind": "rect",
+            "min": [
+              3,
+              3
+            ],
+            "max": [
+              7,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "illusion-1",
+          "type": "illusion",
+          "phase": "forecast",
+          "start_tick": 55,
+          "area": {
+            "kind": "rect",
+            "min": [
+              8,
+              3
+            ],
+            "max": [
+              12,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "angel-1",
+          "type": "angel",
+          "phase": "forecast",
+          "start_tick": 100,
+          "area": {
+            "kind": "points",
+            "at": [
+              [
+                3,
+                9
+              ],
+              [
+                14,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "angel",
+            "phase": "granted",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": 125,
+            "area": null,
+            "trigger": null,
+            "subject_ids": [
+              "A"
+            ],
+            "related_event_id": "angel-1",
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true
+    },
+    {
+      "id": "ended-self-expire",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "A 号战车的「幻术」已解除，移动方向恢复正常。",
+      "request_known_events": [
+        {
+          "event_id": "explosion-1",
+          "type": "explosion",
+          "phase": "forecast",
+          "start_tick": 40,
+          "area": {
+            "kind": "rect",
+            "min": [
+              3,
+              3
+            ],
+            "max": [
+              7,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "illusion-1",
+          "type": "illusion",
+          "phase": "forecast",
+          "start_tick": 55,
+          "area": {
+            "kind": "rect",
+            "min": [
+              8,
+              3
+            ],
+            "max": [
+              12,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "angel-1",
+          "type": "angel",
+          "phase": "forecast",
+          "start_tick": 100,
+          "area": {
+            "kind": "points",
+            "at": [
+              [
+                3,
+                9
+              ],
+              [
+                14,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "illusion",
+            "phase": "ended",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": null,
+            "trigger": null,
+            "subject_ids": [
+              "A"
+            ],
+            "related_event_id": "illusion-1",
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true
+    },
+    {
+      "id": "ended-whole-event-no-tick",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "爆炸已结束。",
+      "request_known_events": [
+        {
+          "event_id": "explosion-1",
+          "type": "explosion",
+          "phase": "forecast",
+          "start_tick": 40,
+          "area": {
+            "kind": "rect",
+            "min": [
+              3,
+              3
+            ],
+            "max": [
+              7,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "illusion-1",
+          "type": "illusion",
+          "phase": "forecast",
+          "start_tick": 55,
+          "area": {
+            "kind": "rect",
+            "min": [
+              8,
+              3
+            ],
+            "max": [
+              12,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "angel-1",
+          "type": "angel",
+          "phase": "forecast",
+          "start_tick": 100,
+          "area": {
+            "kind": "points",
+            "at": [
+              [
+                3,
+                9
+              ],
+              [
+                14,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "ended",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": null,
+            "trigger": null,
+            "subject_ids": null,
+            "related_event_id": "explosion-1",
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true
+    },
+    {
+      "id": "report-hit-only",
+      "origin": "config/stage2.json 公告模板，数值为人工填充样例，不代表比赛日程",
+      "source_text": "B 号战车受到爆炸，实际损失 35 HP，剩余 65 HP。",
+      "request_known_events": [
+        {
+          "event_id": "explosion-1",
+          "type": "explosion",
+          "phase": "forecast",
+          "start_tick": 40,
+          "area": {
+            "kind": "rect",
+            "min": [
+              3,
+              3
+            ],
+            "max": [
+              7,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "illusion-1",
+          "type": "illusion",
+          "phase": "forecast",
+          "start_tick": 55,
+          "area": {
+            "kind": "rect",
+            "min": [
+              8,
+              3
+            ],
+            "max": [
+              12,
+              7
+            ]
+          }
+        },
+        {
+          "event_id": "angel-1",
+          "type": "angel",
+          "phase": "forecast",
+          "start_tick": 100,
+          "area": {
+            "kind": "points",
+            "at": [
+              [
+                3,
+                9
+              ],
+              [
+                14,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "report",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": null,
+            "trigger": null,
+            "subject_ids": [
+              "B"
+            ],
+            "related_event_id": "explosion-1",
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": true,
+      "runtime": {
+        "effect": "none; HP only from perception"
+      }
+    },
+    {
+      "id": "missing-start-forecast",
+      "origin": "人工负例",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                4,
+                4
+              ],
+              "max": [
+                9,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "damage": 80,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "wrong-geometry-for-type",
+      "origin": "人工负例",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 75,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "points",
+              "at": [
+                [
+                  4,
+                  4
+                ]
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "damage": 80,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "extra-field-not-yet-normalized",
+      "origin": "人工负例",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 75,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                4,
+                4
+              ],
+              "max": [
+                9,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "damage": 80,
+              "respects_protection": true
+            },
+            "confidence": 0.9
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "string-tick-not-coerced",
+      "origin": "人工负例",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": "75",
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                4,
+                4
+              ],
+              "max": [
+                9,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "damage": 80,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "missing-damage-not-guessed",
+      "origin": "人工负例",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 75,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                4,
+                4
+              ],
+              "max": [
+                9,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "angel-single-point-old-kind",
+      "origin": "人工负例：旧 v2 point 无法表达多点",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "angel",
+            "phase": "forecast",
+            "announce_tick": null,
+            "start_tick": 100,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "point",
+              "at": [
+                3,
+                9
+              ]
+            },
+            "trigger": "entry",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 16,
+              "entry_window_ticks": 16,
+              "heal_ticks": 8,
+              "heal_per_tick": 5
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "activated-without-link-or-tick",
+      "origin": "人工负例",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "illusion",
+            "phase": "activated",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": null,
+            "trigger": null,
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "granted-without-related",
+      "origin": "人工负例",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "illusion",
+            "phase": "granted",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": null,
+            "trigger": null,
+            "subject_ids": [
+              "A"
+            ],
+            "related_event_id": null,
+            "params": null
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "report-with-params",
+      "origin": "人工负例：report 不得携带效果参数",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "report",
+            "announce_tick": null,
+            "start_tick": null,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": null,
+            "trigger": null,
+            "subject_ids": null,
+            "related_event_id": "explosion-1",
+            "params": {
+              "damage": 35,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    },
+    {
+      "id": "vulnerability-without-end",
+      "origin": "人工负例：既无 effect_end_tick 也无 vulnerability_ticks",
+      "output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "vulnerability",
+            "phase": "forecast",
+            "announce_tick": null,
+            "start_tick": 185,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "global"
+            },
+            "trigger": "movement",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "movement_window_ticks": 20,
+              "multiplier": 2
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "expected_schema_valid": false
+    }
+  ],
+  "normalization_cases": [
+    {
+      "id": "fenced-extra-key-missing-nullable",
+      "raw_output": "```json\n{\"schema_version\": 3, \"events\": [{\"source_ids\": [\"e1\"], \"type\": \"explosion\", \"phase\": \"forecast\", \"announce_tick\": 50, \"start_tick\": 75, \"area\": {\"kind\": \"rect\", \"min\": [4, 4], \"max\": [9, 9]}, \"trigger\": \"activation\", \"params\": {\"damage\": 80, \"respects_protection\": true}, \"confidence\": 0.9}], \"unresolved_source_ids\": []}\n```",
+      "expected_output": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "e1"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 75,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                4,
+                4
+              ],
+              "max": [
+                9,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "damage": 80,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      },
+      "dropped_keys": [
+        "events[0].confidence"
+      ]
+    },
+    {
+      "id": "braces-in-prose",
+      "raw_output": "说明：{不是对象}\n{\"schema_version\": 3, \"events\": [{\"source_ids\": [\"e1\"], \"type\": \"explosion\", \"phase\": \"forecast\", \"announce_tick\": 50, \"start_tick\": 75, \"at_tick\": null, \"end_tick\": null, \"trigger_end_tick\": null, \"effect_end_tick\": null, \"area\": {\"kind\": \"rect\", \"min\": [4, 4], \"max\": [9, 9]}, \"trigger\": \"activation\", \"subject_ids\": null, \"related_event_id\": null, \"params\": {\"damage\": 80, \"respects_protection\": true}}], \"unresolved_source_ids\": []}",
+      "expected_error": "AmbiguousObjects",
+      "note": "散文中的花括号也构成候选对象时必须拒绝，不能猜测取哪个"
+    },
+    {
+      "id": "brace-in-json-string-ok",
+      "raw_output": "{\"schema_version\": 3, \"events\": [{\"source_ids\": [\"e1}\"], \"type\": \"explosion\", \"phase\": \"forecast\", \"announce_tick\": 50, \"start_tick\": 75, \"at_tick\": null, \"end_tick\": null, \"trigger_end_tick\": null, \"effect_end_tick\": null, \"area\": {\"kind\": \"rect\", \"min\": [4, 4], \"max\": [9, 9]}, \"trigger\": \"activation\", \"subject_ids\": null, \"related_event_id\": null, \"params\": {\"damage\": 80, \"respects_protection\": true}}], \"unresolved_source_ids\": []}",
+      "expected_error": "SourceIdNotInRequest",
+      "note": "字符串中的}不得打断对象扫描；随后因source_id不在请求内被运行时拒绝"
+    },
+    {
+      "id": "truncated-object",
+      "raw_output": "{\"schema_version\": 3, \"events\": [{\"source_ids\": [\"e1\"], \"type\": \"explosion\", \"phase\": \"forecast\", \"announce_tick\": 50, \"",
+      "expected_error": "Truncated"
+    },
+    {
+      "id": "multiple-objects",
+      "raw_output": "{} {}",
+      "expected_error": "AmbiguousObjects"
+    },
+    {
+      "id": "conflicting-duplicate-key",
+      "raw_output": "{\"schema_version\":3,\"schema_version\":2}",
+      "expected_error": "ConflictingDuplicateKey"
+    }
+  ],
+  "local_effect_cases": [
+    {
+      "id": "angel-healing-outlives-point",
+      "origin": "rules §8.4 + 人工回执",
+      "point_interval": [
+        100,
+        120
+      ],
+      "successful_entry_tick": 117,
+      "heal_ticks": 10,
+      "expected_heal_interval": [
+        117,
+        127
+      ]
+    },
+    {
+      "id": "illusion-derived-expiry",
+      "origin": "模板数值",
+      "start_tick": 55,
+      "effect_ticks": 12,
+      "self_in_rect_at_state": 55,
+      "expected_reverse_interval": [
+        55,
+        67
+      ]
+    },
+    {
+      "id": "unrivaled-grant-next-tick",
+      "origin": "rules §8.5 + 人工驻留",
+      "dwell_complete_tick": 160,
+      "fortress_end_tick": 174,
+      "expected_attack_bonus_interval": [
+        161,
+        174
+      ]
+    },
+    {
+      "id": "vulnerability-move-190",
+      "origin": "rules §8.9",
+      "start_tick": 185,
+      "trigger_end_tick": 205,
+      "effect_end_tick": 215,
+      "successful_move_tick": 190,
+      "expected_combat_interval": [
+        191,
+        215
+      ]
+    },
+    {
+      "id": "vulnerability-move-204",
+      "origin": "rules §8.9",
+      "start_tick": 185,
+      "trigger_end_tick": 205,
+      "effect_end_tick": 215,
+      "successful_move_tick": 204,
+      "expected_combat_interval": [
+        205,
+        215
+      ]
+    },
+    {
+      "id": "vulnerability-move-205",
+      "origin": "rules §8.9",
+      "start_tick": 185,
+      "trigger_end_tick": 205,
+      "effect_end_tick": 215,
+      "successful_move_tick": 205,
+      "expected_combat_interval": null
+    }
+  ]
+}

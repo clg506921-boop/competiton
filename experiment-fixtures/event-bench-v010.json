@@ -1,0 +1,529 @@
+{
+  "schema_version": 1,
+  "purpose": "External real-model experiment, not a production event schedule or input.",
+  "training_cases": [
+    "explosion",
+    "vulnerability"
+  ],
+  "held_out_cases": [
+    "illusion",
+    "angel",
+    "unrivaled",
+    "world_split",
+    "chili",
+    "reflection"
+  ],
+  "strict_request_max_tokens": 2048,
+  "cases": [
+    {
+      "id": "explosion",
+      "source_id": "bench-explosion",
+      "announcement": "第 50 Tick：随机事件预告：25 Tick 后（Tick 75），左上角 [4,4]、右下角 [9,9] 的矩形区域将发生爆炸，范围内所有存活战车扣除 80 HP；出生保护免疫。",
+      "current_tick": 50,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-explosion"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 75,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                4,
+                4
+              ],
+              "max": [
+                9,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "damage": 80,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "illusion",
+      "source_id": "bench-illusion",
+      "announcement": "第 50 Tick：随机事件预告：Tick 55（5 Tick 后），矩形 [8, 3] 至 [12, 7] 内战车将中幻术，接下来 12 Tick 移动上下、左右均颠倒；复活不解除。",
+      "current_tick": 50,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-illusion"
+            ],
+            "type": "illusion",
+            "phase": "forecast",
+            "announce_tick": 50,
+            "start_tick": 55,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "rect",
+              "min": [
+                8,
+                3
+              ],
+              "max": [
+                12,
+                7
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "effect_ticks": 12,
+              "moves_only": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "angel",
+      "source_id": "bench-angel",
+      "announcement": "第 95 Tick：随机事件预告：5 Tick 后（Tick 100），天使恩泽将在 [[3, 9], [14, 9]] 出现并存在 16 Tick。进入点位可获得持续 8 Tick、每 Tick 回血 5 HP 的增益，上限 100 HP；离开再进入可以刷新。",
+      "current_tick": 95,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-angel"
+            ],
+            "type": "angel",
+            "phase": "forecast",
+            "announce_tick": 95,
+            "start_tick": 100,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "points",
+              "at": [
+                [
+                  3,
+                  9
+                ],
+                [
+                  14,
+                  9
+                ]
+              ]
+            },
+            "trigger": "entry",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 16,
+              "entry_window_ticks": 16,
+              "heal_ticks": 8,
+              "heal_per_tick": 5,
+              "hp_cap": 100
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "unrivaled",
+      "source_id": "bench-unrivaled",
+      "announcement": "第 145 Tick：随机事件预告：Tick 150（5 Tick 后），地图中央 [9, 9] 将出现 3×3 堡垒并存在 24 Tick。连续停留 4 Tick 将获得「天下无双」：ATTACK 命中自身周围5×5内所有敌人，普通伤害 35 HP、防御伤害 7 HP；增益于堡垒消失时结束。",
+      "current_tick": 145,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-unrivaled"
+            ],
+            "type": "unrivaled",
+            "phase": "forecast",
+            "announce_tick": 145,
+            "start_tick": 150,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "square",
+              "center": [
+                9,
+                9
+              ],
+              "size": 3
+            },
+            "trigger": "dwell",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 24,
+              "required_dwell_ticks": 4,
+              "attack_size": 5,
+              "damage": 35,
+              "defended_damage": 7
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "world_split",
+      "source_id": "bench-world_split",
+      "announcement": "第 195 Tick：随机事件预告：Tick 200（5 Tick 后），以 [8, 8] 为交点的整行整列将生成十字障碍，存在 10 Tick。障碍生成时十字线上的战车直接死亡并立即回出生点重生，已有增益和负面效果保留。",
+      "current_tick": 195,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-world_split"
+            ],
+            "type": "world_split",
+            "phase": "forecast",
+            "announce_tick": 195,
+            "start_tick": 200,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "cross",
+              "at": [
+                8,
+                8
+              ]
+            },
+            "trigger": "activation",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 10
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "chili",
+      "source_id": "bench-chili",
+      "announcement": "第 245 Tick：随机事件预告：5 Tick 后（Tick 250），火爆辣椒点 [[5, 6], [12, 11]] 出现并存在 16 Tick。每次进入点位会触发仅1 Tick的整行整列十字火线，交点自身除外，线上战车扣除 30 HP。停留不重复触发，出生保护免疫。",
+      "current_tick": 245,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-chili"
+            ],
+            "type": "chili",
+            "phase": "forecast",
+            "announce_tick": 245,
+            "start_tick": 250,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "points",
+              "at": [
+                [
+                  5,
+                  6
+                ],
+                [
+                  12,
+                  11
+                ]
+              ]
+            },
+            "trigger": "entry",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 16,
+              "damage": 30,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "reflection",
+      "source_id": "bench-reflection",
+      "announcement": "第 295 Tick：随机事件预告：Tick 300（5 Tick 后）起，全场进入持续 16 Tick 的「洁身自好」：攻击正在防御的敌人会让攻击者自身受到 12 HP 伤害，并且无法伤害该目标。",
+      "current_tick": 295,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-reflection"
+            ],
+            "type": "reflection",
+            "phase": "forecast",
+            "announce_tick": 295,
+            "start_tick": 300,
+            "at_tick": null,
+            "end_tick": null,
+            "trigger_end_tick": null,
+            "effect_end_tick": null,
+            "area": {
+              "kind": "global"
+            },
+            "trigger": "attack_defender",
+            "subject_ids": null,
+            "related_event_id": null,
+            "params": {
+              "duration_ticks": 16,
+              "reflect_damage": 12
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "vulnerability",
+      "source_id": "bench-vulnerability",
+      "announcement": "第180 Tick公告：潘潘的神将在Tick185生效，全场持续30 Tick。前20 Tick成功移动的车辆从下一Tick战斗起易伤，普通及无双战斗伤害乘2，效果统一到Tick215结束；WAIT和移动失败不触发。",
+      "current_tick": 180,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "bench-vulnerability"
+            ],
+            "type": "vulnerability",
+            "phase": "forecast",
+            "announce_tick": 180,
+            "start_tick": 185,
+            "effect_end_tick": 215,
+            "area": {
+              "kind": "global"
+            },
+            "trigger": "movement",
+            "params": {
+              "movement_window_ticks": 20,
+              "multiplier": 2
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    }
+  ],
+  "blind_cases": [
+    {
+      "id": "blind-explosion",
+      "source_id": "blind-explosion",
+      "announcement": "第26 Tick通知：17 Tick后即Tick43，矩形[2,3]到[7,9]内将爆炸，扣65 HP；出生保护免疫。",
+      "current_tick": 26,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "blind-explosion"
+            ],
+            "type": "explosion",
+            "phase": "forecast",
+            "announce_tick": 26,
+            "start_tick": 43,
+            "area": {
+              "kind": "rect",
+              "min": [
+                2,
+                3
+              ],
+              "max": [
+                7,
+                9
+              ]
+            },
+            "trigger": "activation",
+            "params": {
+              "damage": 65,
+              "respects_protection": true
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "blind-angel",
+      "source_id": "blind-angel",
+      "announcement": "第61 Tick预告：Tick68在[[6,14],[17,7]]生成天使点，存在14 Tick，仅前9 Tick成功进入可获得6 Tick回血，每Tick加7 HP，上限100。",
+      "current_tick": 61,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "blind-angel"
+            ],
+            "type": "angel",
+            "phase": "forecast",
+            "announce_tick": 61,
+            "start_tick": 68,
+            "area": {
+              "kind": "points",
+              "at": [
+                [
+                  6,
+                  14
+                ],
+                [
+                  17,
+                  7
+                ]
+              ]
+            },
+            "trigger": "entry",
+            "params": {
+              "duration_ticks": 14,
+              "entry_window_ticks": 9,
+              "heal_ticks": 6,
+              "heal_per_tick": 7,
+              "hp_cap": 100
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "blind-vulnerability",
+      "source_id": "blind-vulnerability",
+      "announcement": "第100 Tick公告：Tick108开始全场潘潘的神。前12 Tick成功移动触发易伤，下一Tick起战斗伤害乘3，所有易伤统一在Tick137结束。",
+      "current_tick": 100,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "blind-vulnerability"
+            ],
+            "type": "vulnerability",
+            "phase": "forecast",
+            "announce_tick": 100,
+            "start_tick": 108,
+            "area": {
+              "kind": "global"
+            },
+            "trigger": "movement",
+            "params": {
+              "movement_window_ticks": 12,
+              "multiplier": 3
+            },
+            "effect_end_tick": 137
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    },
+    {
+      "id": "blind-unrivaled",
+      "source_id": "blind-unrivaled",
+      "announcement": "第44 Tick预告：Tick53在[12,12]出现3×3堡垒，存在31 Tick，连续驻留6 Tick授予无双，攻击自身5×5全部敌人，普通伤害43、防御伤害9，堡垒消失时增益失效。",
+      "current_tick": 44,
+      "width": 24,
+      "height": 24,
+      "known_events": [],
+      "expected": {
+        "schema_version": 3,
+        "events": [
+          {
+            "source_ids": [
+              "blind-unrivaled"
+            ],
+            "type": "unrivaled",
+            "phase": "forecast",
+            "announce_tick": 44,
+            "start_tick": 53,
+            "area": {
+              "kind": "square",
+              "center": [
+                12,
+                12
+              ],
+              "size": 3
+            },
+            "trigger": "dwell",
+            "params": {
+              "duration_ticks": 31,
+              "required_dwell_ticks": 6,
+              "attack_size": 5,
+              "damage": 43,
+              "defended_damage": 9
+            }
+          }
+        ],
+        "unresolved_source_ids": []
+      }
+    }
+  ]
+}

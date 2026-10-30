@@ -1,0 +1,271 @@
+{
+  "rule": "Per real code iteration and fixed scenario at most 3 executions; retain all historical attempts; compare mean and sample variation.",
+  "historical": {
+    "core_tests_group": 3,
+    "events_tests_group": 3,
+    "llm_tests_group": 3,
+    "event_memory_tests_group": 3,
+    "battle_tests_group": 3,
+    "http_transport_scenarios": 2,
+    "old_synthetic_ros_scenario": 2,
+    "reference_stage1_scenario": 3
+  },
+  "new_runtime": {
+    "first_12_cases": 3,
+    "RuntimeRecovery_cases": 1,
+    "RuntimeEnvironment_chili": 1,
+    "RuntimeDiagnostics.GatewayErrorCannotEchoCredentialsIntoDiagnosticStatus": 3,
+    "RuntimeDiagnostics.NonpositiveOutputLimitDisablesAiWithoutStoppingControl": 2,
+    "RuntimeDiagnostics.ProtocolTokenEnvironmentOverridesFileAndRejectsConflictingAlias": 1,
+    "integrated_ros_http_pipeline": 4
+  },
+  "new_distinct_cpp_tests": 18,
+  "referee_games_this_phase": 0,
+  "real_model_calls": 4,
+  "do_not_run_unfiltered_ctest": false,
+  "v0_3_candidate": {
+    "advanced_tests": 3,
+    "new_tests_passed_before_qualification_fix": 11,
+    "qualification_pending_tests": 1,
+    "integrated_pipeline_status": "ordinal 4 passed under one-off explicit user authorization; fifth is not authorized",
+    "validation_paused": false,
+    "fourth_pipeline_execution_allowed": false,
+    "authorized_extra_execution_consumed": true,
+    "fifth_pipeline_execution_allowed": false
+  },
+  "explicit_exceptions": [
+    {
+      "date": "2026-10-21",
+      "user_reply": "继续 可以",
+      "scope": "one additional integrated pipeline execution to verify qualification repair",
+      "previous_executions": 3,
+      "additional_allowed": 1,
+      "additional_consumed": 1,
+      "total_executions": 4,
+      "other_scenario_budgets_reset": false
+    },
+    {
+      "date": "2026-10-22",
+      "user_reply": "继续",
+      "scope": "one corrected stage1 B precheck after explicit pending request",
+      "previous_executions": 3,
+      "additional_allowed": 1,
+      "additional_consumed": 1,
+      "total_executions": 4,
+      "other_scenario_budgets_reset": false
+    }
+  ],
+  "current_version": "v0.12",
+  "last_updated_client_date": "2026-10-22",
+  "v0_4_recovery": {
+    "recovery_tests": 1,
+    "synthetic_seat_b_restart": 2,
+    "audit_tool_tests": 2,
+    "new_cpp_tests_passed": 9,
+    "audit_cases_passed": 3,
+    "first_audit_attempt": "Windows sandbox temporary directory denied; counted before Ubuntu execution",
+    "first_restart_attempt": "fixture alive=true contradicted expected dead WAIT; preserved",
+    "second_restart_attempt": "passed; only fixture fixed, production C++ unchanged",
+    "referee_games": 0,
+    "real_model_calls": 0
+  },
+  "v0_5_opportunities": {
+    "opportunity_test_group_executions": 3,
+    "first_execution": {
+      "tests": 14,
+      "passed": 13,
+      "failed": 1
+    },
+    "second_execution": {
+      "tests": 17,
+      "passed": 17,
+      "status": "intermediate H=5; superseded by restored v1.1.1 H=1"
+    },
+    "third_execution": {
+      "tests": 18,
+      "passed": 18
+    },
+    "safety_fixture_compile_failure_did_not_execute_tests": true,
+    "advanced_regression_executions_total": 3,
+    "advanced_regression_executions_this_phase": 2,
+    "final_advanced_cases_passed": 11,
+    "automatic_repeat_prohibited": [
+      "opportunity_tests",
+      "advanced_tests"
+    ],
+    "ros_runtime_scenarios": 0,
+    "referee_games": 0,
+    "real_model_calls": 0,
+    "http_requests": 0
+  },
+  "v0_6_official_integration": {
+    "objective_test_group_executions": 1,
+    "objective_tests_passed": 8,
+    "official_match_executions": {
+      "own-stage1-default": 1,
+      "own-stage2-three-companions": 2,
+      "own-stage2-real-solo": 1,
+      "own-stage1-size20": 1
+    },
+    "stage1_campaign_total": 2,
+    "stage2_campaign_total": 3,
+    "automatic_stage2_repeat_prohibited": true,
+    "real_gateway_probe_executions": 1,
+    "real_upstream_requests": 4,
+    "production_real_requests": 3,
+    "production_real_proxy_successes": 3,
+    "production_local_successes": 2,
+    "production_uncertain_reserved": 1,
+    "production_model_rejected": 1,
+    "first_stage_observer_reaudit_was_read_only": true,
+    "test_counts_reset": false
+  },
+  "v0_7_model_diagnostics": {
+    "new_group_executions": 3,
+    "first_execution": {
+      "tests": 16,
+      "passed": 15,
+      "failed": 1,
+      "reason": "fixture expected a session switch before two silent periods"
+    },
+    "second_execution": {
+      "tests": 16,
+      "passed": 16
+    },
+    "third_execution": {
+      "tests": 17,
+      "passed": 17
+    },
+    "events_group_total_executions": 3,
+    "events_cases_passed_before_index_refinement": 9,
+    "http_transport_total_executions": 2,
+    "local_http_cases_passed_before_index_refinement": 4,
+    "automatic_repeat_prohibited": [
+      "model_diagnostics_tests",
+      "events_tests"
+    ],
+    "referee_games": 0,
+    "real_model_calls": 0,
+    "ros_runtime_scenarios": 0,
+    "final_index_change_scope": [
+      "src/events.cpp",
+      "test/model_diagnostics_tests.cpp"
+    ],
+    "old_counts_reset": false
+  },
+  "v0_8_recon": {
+    "recon_group_executions": 3,
+    "first_execution": {
+      "tests": 13,
+      "passed": 13
+    },
+    "second_execution": {
+      "tests": 14,
+      "passed": 14
+    },
+    "third_execution": {
+      "tests": 14,
+      "passed": 14
+    },
+    "automatic_repeat_prohibited": [
+      "recon_tests"
+    ],
+    "old_groups_executed": false,
+    "official_match_counters_unchanged": true,
+    "referee_games": 0,
+    "real_model_calls": 0,
+    "ros_runtime_scenarios": 0,
+    "read_only_wait_review_passes": 2,
+    "initial_wait_review_wrong_entity_field_retained": true,
+    "counts_reset": false
+  },
+  "v0_9_delivery": {
+    "tiebreak_group_executions": 1,
+    "tiebreak_cases_passed": 13,
+    "battle_group_total_executions": 3,
+    "battle_cases_passed": 8,
+    "objective_group_total_executions": 2,
+    "objective_cases_passed": 8,
+    "new_startup_cli_suite_executions": 2,
+    "new_startup_first_cases_passed": 15,
+    "new_startup_final_cases_passed": 16,
+    "isolated_fresh_builds": 1,
+    "fresh_OS_tested": false,
+    "new_referee_games": 0,
+    "new_real_model_calls": 0,
+    "new_ros_runtime_scenarios": 0,
+    "automatic_repeat_prohibited": [
+      "battle_tests"
+    ],
+    "other_exhausted_groups_still_prohibited": true,
+    "official_stage2_campaign_total": 3,
+    "counts_reset": false
+  },
+  "v0_9_1_restore_precheck": {
+    "source_archive_restores": 1,
+    "isolated_native_builds_total": 2,
+    "first_precheck": {
+      "passed": false,
+      "reason": "test setup used default robots=[A] while launching B",
+      "stopped_before_first_action_window": true
+    },
+    "authorized_corrected_precheck": {
+      "passed": true,
+      "stage": 1,
+      "seat": "B",
+      "ticks": 100,
+      "resources": 200,
+      "score": 40,
+      "official_receipts": 100,
+      "invalid_actions": 0,
+      "pause_tick": 21
+    },
+    "stage1_attempts_total": 4,
+    "stage1_completed_matches_total": 3,
+    "stage2_matches_total": 3,
+    "pure_budget_guard_tests_executions": 1,
+    "pure_budget_guard_cases_passed": 6,
+    "window_captures_total": 3,
+    "real_model_calls": 0,
+    "new_completed_matches": 1,
+    "failed_setup_attempts": 1,
+    "automatic_repeat_prohibited": [
+      "stage1_campaign",
+      "stage2_campaign",
+      "window_captures"
+    ],
+    "test_counts_reset": false
+  },
+  "superseded_rule": "Earlier global stage caps and no-reset-after-code-change interpretation superseded by latest user clarification.",
+  "v0_10_prompt_experiments": {
+    "paid_requests_attempted": 120,
+    "iterations": [
+      "fbf0001fea78ed0c5b58",
+      "317f5dc873885c12684a",
+      "731866faf90fdf7bcfe0"
+    ],
+    "maximum_per_case_and_prompt": 3,
+    "failed_iterations_retained": true
+  },
+  "current_match_iterations": {
+    "731866faf90fdf7bcfe0": {
+      "own-stage2-size24-real-three-companions": 3
+    },
+    "0ced0e48a23b5c06c07a": {
+      "own-stage2-size24-real-three-companions": 3
+    },
+    "69c791d47ed1b3606bf1": {
+      "own-stage2-size24-real-three-companions": 3
+    }
+  },
+  "v0_11_native_regression_executions": 1,
+  "v0_12_native_regression_executions": 1,
+  "profile_validation_status": "ASan initial fixture failure retained; second sanitizer run and first O3/LTO run passed; production binary unchanged.",
+  "v0_12_build_profiles": {
+    "full_native_regression": 1,
+    "debug-sanitize": 2,
+    "release_event_fixture_repair": 1,
+    "release-o3-lto": 1
+  },
+  "overall_competitive_improvement_proven": false
+}

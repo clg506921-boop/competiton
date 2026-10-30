@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "scenario": "layout24-A",
+  "seat": "A",
+  "launch": "native",
+  "source": "/home/ubuntu/projects/RMTC/candidate-v0251-tail-fix",
+  "cpp_strategy_fingerprint": "1bf25f43ac4992484c5e",
+  "real_model_calls": 16,
+  "ai_mode": "real",
+  "tick_ms": 500,
+  "max_ticks": 140,
+  "port": 8080,
+  "domain": 27,
+  "test_scope": "140 Tick bounded real event validation; not full-match competitive result",
+  "bot_data_mount_scope": "contestant logs only; referee snapshots remain outside mount",
+  "before_integrity": {
+    "referee_root": "/home/ubuntu/projects/RMTC/practice-v1.1-run/rmtc_practice",
+    "rules_version": "v1.1",
+    "archive_sha256": "b2e92c20829258a1caf1f2224b8b22f2ca6ce6a2e41a20a6ca5752564ff747f1",
+    "files": 16,
+    "all_match": true,
+    "mismatches": [],
+    "original_archive_matches": true
+  },
+  "official_v12_referee_tested": false,
+  "source_version": "v0.25.1-tail-offer-fix",
+  "source_manifest_sha256": "38e8afc08a3da5b21b07632ecafce7c6159d8cc6b5aca2af95c07acc97cbb9a4",
+  "previous_session": "practice-59cf42c24c8a4b8dbdc532421b45f1f6",
+  "stopped_previous_controllers": [],
+  "practice_opponent_seats": [
+    "B",
+    "C",
+    "D"
+  ],
+  "opponent_gateway_mode": "external_mock_no_upstream",
+  "test_meter_attempt_budget": 16,
+  "max_tokens": 512,
+  "map_config_sha256": "d44eadbbc2e7668957fefcd4cce5c69015306701cee3816191e465c1ecf5286c",
+  "session_id": "practice-a93a8e8657a14d92885d5c863ab8d469",
+  "run_dir": "/home/ubuntu/projects/RMTC/oct29-real25116/referee-data/practice-a93a8e8657a14d92885d5c863ab8d469",
+  "external_opponent_pids": [
+    128412,
+    128413,
+    128414
+  ],
+  "native_binary_sha256": "c0411bef60dfab423ca77a0aeae9f16983542190ec1abcc21c395c8c3ded4089",
+  "native_filesystem_isolation": false,
+  "production_inputs": "own public perception; private connection and registered decision configuration only",
+  "actual_publication_mode": "ASYNCHRONOUS",
+  "own_shm_fds": [],
+  "startup_handshake": "own node read-only service round-trip, official bridge both directions, current-session registration",
+  "bot_stopped_before_analysis": true,
+  "audit_log_sha256": "158ba1c9c9f66c0133499eaaa7aab3c3a891f1c53f088067460fd01f975375f4",
+  "transport_recovery_attempts": 0,
+  "final": {
+    "team": "A",
+    "team_name": "肥鱼说的都队",
+    "score": 31.7,
+    "resource_value": 50.0,
+    "effective_damage": 140.0,
+    "mission_completed": 3,
+    "invalid_actions": 0,
+    "hp": 100,
+    "alive": true
+  },
+  "rank": 1,
+  "all_teams": [
+    {
+      "team": "A",
+      "team_name": "肥鱼说的都队",
+      "score": 31.7,
+      "resource_value": 50.0,
+      "effective_damage": 140.0,
+      "mission_completed": 3,
+      "invalid_actions": 0,
+      "hp": 100,
+      "alive": true
+    },
+    {
+      "team": "D",
+      "team_name": "练习陪练D",
+      "score": 31.2,
+      "resource_value": 60.0,
+      "effective_damage": 40.0,
+      "mission_completed": 3,
+      "invalid_actions": 0,
+      "hp": 100,
+      "alive": true
+    },
+    {
+      "team": "C",
+      "team_name": "练习陪练C",
+      "score": 30.5,
+      "resource_value": 50.0,
+      "effective_damage": 100.0,
+      "mission_completed": 3,
+      "invalid_actions": 0,
+      "hp": 60,
+      "alive": true
+    },
+    {
+      "team": "B",
+      "team_name": "练习陪练B",
+      "score": 28.6,
+      "resource_value": 40.0,
+      "effective_damage": 120.0,
+      "mission_completed": 3,
+      "invalid_actions": 0,
+      "hp": 40,
+      "alive": true
+    }
+  ],
+  "deaths": [
+    69,
+    136
+  ],
+  "actions": {
+    "move": 121,
+    "attack": 9,
+    "defend": 1,
+    "wait": 9
+  },
+  "reasons": {
+    "P5_resource_or_collection_mission": 19,
+    "P4_reach_mission": 14,
+    "P8_explore_unknown": 64,
+    "P7_nearby_firing_position": 17,
+    "P2_net_combat_attack": 9,
+    "P3_defend": 1,
+    "P0_dead_or_incomplete": 6,
+    "P6_fortress_prepare": 2,
+    "P6_fortress_dwell": 8
+  },
+  "analysis": {
+    "seat": "A",
+    "perceptions": 141,
+    "unique_perception_ticks": 141,
+    "logged_actions": 140,
+    "unique_submitted_window_ticks": 140,
+    "missing_submission_ticks": [],
+    "all_action_sessions_match": true,
+    "terminal_candidate_actions": 0,
+    "associated_receipts": 140,
+    "receipt_association_rate": 1.0,
+    "mismatched_receipt_ticks": [],
+    "protocol_error_ticks": [],
+    "receipt_errors": {
+      "E_BLOCKED": 1
+    },
+    "moved_receipts": 120,
+    "action_types": {
+      "move": 121,
+      "attack": 9,
+      "defend": 1,
+      "wait": 9
+    },
+    "own_unique_decisions": 140,
+    "own_parse_errors": 0,
+    "primary_receipt_source": "contestant subscriber summaries of official self.last_action; independent observer coverage is reported separately",
+    "primary_associated_receipts": 140,
+    "primary_receipt_association_rate": 1.0,
+    "primary_mismatched_ticks": [],
+    "primary_protocol_error_ticks": [],
+    "primary_missing_receipt_ticks": [],
+    "primary_receipt_statuses": {
+      "confirmed": 139,
+      "move_failed": 1
+    },
+    "observer_missing_actions_with_executed_move_receipts": [],
+    "own_log_dropped": 0,
+    "application_timing": {
+      "samples": 140,
+      "p99_ms": 37.357328,
+      "max_ms": 42.202411999999995,
+      "scope": "callback-entry through publish; excludes upstream DDS and referee settlement"
+    },
+    "final_public_self": {
+      "alive": true,
+      "defending": false,
+      "hp": 100,
+      "last_action": {
+        "action": "move",
+        "effective_direction": "down",
+        "moved": true,
+        "tick": 139
+      },
+      "position": [
+        1,
+        2
+      ],
+      "protected": false,
+      "respawn_in": 0,
+      "robot_id": "A",
+      "team": "A"
+    },
+    "stage": 2
+  },
+  "ai_audit_records": 16,
+  "own_local_ai_successful": 16,
+  "events_validated": 8,
+  "events_applied": 8,
+  "own_referee_real_successful": 16,
+  "meter_attempts": 16,
+  "official_stop_after_settlement": true,
+  "after_integrity": {
+    "referee_root": "/home/ubuntu/projects/RMTC/practice-v1.1-run/rmtc_practice",
+    "rules_version": "v1.1",
+    "archive_sha256": "b2e92c20829258a1caf1f2224b8b22f2ca6ce6a2e41a20a6ca5752564ff747f1",
+    "files": 16,
+    "all_match": true,
+    "mismatches": [],
+    "original_archive_matches": true
+  }
+}
