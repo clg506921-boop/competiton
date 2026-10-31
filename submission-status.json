@@ -36,7 +36,7 @@
   "yuque_markdown_verified": true,
   "yuque_format_issue_reported_by_user": true,
   "github_source_commit": "a8571dcccc9a931d94db555a85572203cb5ffb22",
-  "github_uploaded_files": 172,
+  "github_uploaded_files": 183,
   "yuque_format_issue_resolved": true,
   "yuque_format_method": "Markdown parsed into semantic headings, tables, and code blocks through editor paste; native Markdown-source editor not claimed",
   "yuque_verified_after_reload": true,
@@ -47,5 +47,7 @@
   "final_practice_stage2_mock_verified": true,
   "perception_position_screenshot_pending": false,
   "latest_practice_evidence": "docs/submission/证据/最终镜像两阶段检录截图核验.json",
-  "practice_precheck_evidence_complete": true
+  "practice_precheck_evidence_complete": true,
+  "formal_registration_topic_confirmed": false,
+  "formal_registration_topic_pending": "Handbook /team_<seat>/registration vs current /referee/registration; official compatibility not verified"
 }
