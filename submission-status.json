@@ -48,6 +48,16 @@
   "perception_position_screenshot_pending": false,
   "latest_practice_evidence": "docs/submission/证据/最终镜像两阶段检录截图核验.json",
   "practice_precheck_evidence_complete": true,
-  "formal_registration_topic_confirmed": false,
-  "formal_registration_topic_pending": "Handbook /team_<seat>/registration vs current /referee/registration; official compatibility not verified"
+  "registration_topic_matches_documentation": true,
+  "registration_topic": "/team_<seat>/registration",
+  "registration_review": {
+    "handbook_page": 5,
+    "protocol_v11_page": 4,
+    "source": "contestant_ws/src/rmtc_bot/src/ros_node.cpp:81-84,114-115",
+    "message_fields": [
+      "team",
+      "name"
+    ],
+    "qos": "RELIABLE / TRANSIENT_LOCAL / KEEP_LAST(1)"
+  }
 }
