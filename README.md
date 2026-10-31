@@ -54,22 +54,22 @@ stage字段分别为字符串"1"、"2"，不是另起参考车。每个席位只
 
 ## 配置与运行逻辑
 
-本场参数使用单个私有JSON：seat、stage、team_name、referee_host、ros_domain_id、network、gateway_url、team_token、model、max_tokens、ai_quota、max_ticks、tick_ms。正式有线为wired；同机练习为local。模型deepseek-flash、max_tokens=512按参赛手册填写；本场额度尚需主办方提供。令牌不提交Git，禁止在截图、报告或公开日志中展示。
+本场参数使用单个私有JSON：seat、stage、team_name、referee_host、ros_domain_id、network、gateway_url、team_token、model、max_tokens、ai_quota、max_ticks、tick_ms。正式有线及默认裁判使用wired；local仅用于双方均匹配的回环UDP配置。本次同机最终检录使用wired/default DDS完成。模型deepseek-flash、max_tokens=512按参赛手册填写；本场额度尚需主办方提供。令牌不提交Git，禁止在截图、报告或公开日志中展示。
 
 感知与动作话题随席位选择为/team_<seat>/perception和/team_<seat>/action，JSON内tick/session_id来自该帧感知，位置来自self.position。动作只有经过本车后续self.last_action核对，才算完成执行闭环。LLM工作线程只产生经校验的事件信息，不直接发布过期动作。
 
 ## 当前提交状态
 
-这是待审核的源码仓库，尚未指定最终比赛版本、尚未完成正式提交。最终封版前核对git status、提交号、启动路径及代码/镜像一致性；统一调整窗口若改变程序，另记录第二阶段实际版本。
+最终比赛版本已确定为v0.25.1-final，底层v0.25.1-tail-offer-fix；代码与镜像已冻结。两阶段练习端最终镜像检录证据已补齐：第一阶段100/100、40分；第二阶段mock500/500、45分第一名、97次攻击，均0无效动作。数字感知坐标、场次、动作和后续回执截图已加入报告6.3节。尚未代为向赛事入口正式提交。
 
-注册话题存在待核对项：参赛手册写/team_<seat>/registration，当前v1.1练习基线仍使用/referee/registration。应在最终封版前按最新通信协议确认并联调；本草稿不声称该项正式接入已通过。正在优化的内容与最终镜像暂不填成完成。
+注册话题存在待核对项：参赛手册写/team_<seat>/registration，当前v1.1练习基线仍使用/referee/registration。需在正式现场接入前向主办方确认正式裁判是否兼容当前注册话题；本版本仅证明官方v1.1练习端通过，未宣称正式裁判接口验收通过。不得把该风险写成已解决。
 
-正式前置检录图、仓库/语雀链接与协作者访问检查见docs/submission中的清单。已有历史截图按版本注明，仅作开发记录。
+最终镜像练习端检录图与历史截图已按版本分别注明；工作人员协作权限和正式提交回执尚需实际办理，见docs/submission清单。
 
 ## 材料入口
 
 - 技术报告：[语雀导入稿](docs/submission/01-技术报告-语雀导入稿.md)
-- 语雀文档：https://www.yuque.com/ahz56/cbis6h/nlgzqv1hvhksyz2c（正文同步及权限核验待完成）
+- 语雀文档：https://www.yuque.com/ahz56/cbis6h/nlgzqv1hvhksyz2c（正文及截图已同步；工作人员权限仍需核验）
 - 当前仓库经队员确认公开上传；正式令牌和私有配置不得提交。
 
 ## 最终封版交付
