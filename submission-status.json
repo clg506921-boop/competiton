@@ -21,7 +21,7 @@
   "final_commit": "a8571dcccc9a931d94db555a85572203cb5ffb22",
   "final_runtime_path": "/opt/rmtc",
   "formal_max_tokens_from_handbook": 512,
-  "final_precheck_screenshots_complete": false,
+  "final_precheck_screenshots_complete": true,
   "remote_created": true,
   "officially_submitted": false,
   "ongoing_optimization": "Closed at user request; no additional code changes",
@@ -45,6 +45,7 @@
   "submission_final": true,
   "final_practice_stage1_verified": true,
   "final_practice_stage2_mock_verified": true,
-  "perception_position_screenshot_pending": true,
-  "latest_practice_evidence": "docs/submission/证据/最终镜像两阶段检录截图核验.json"
+  "perception_position_screenshot_pending": false,
+  "latest_practice_evidence": "docs/submission/证据/最终镜像两阶段检录截图核验.json",
+  "practice_precheck_evidence_complete": true
 }

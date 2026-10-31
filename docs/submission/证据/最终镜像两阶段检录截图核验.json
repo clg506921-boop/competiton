@@ -20,7 +20,7 @@
     "rank": 1,
     "mock_successes": 35
   },
-  "perception_position_screenshot_pending": true,
+  "perception_position_screenshot_pending": false,
   "official_ai_qualification_proven": false,
   "wired_two_device_test_proven": false,
   "production_code_changed": false,
@@ -31,6 +31,36 @@
     "07-最终镜像100动作100回执与场次Tick回填.png": "60d830d2d41832a0ef1591f8496be863756369f0c57dbc27d248b1a45de070a7",
     "10-第二阶段mock最终镜像配置检查通过.png": "6f2f3ac9627f7066baf41ce49532dd4d8e6673bce3b7df9103fc1cd86d6f6b9f",
     "13-第二阶段500Tick45分与最终攻击回执.png": "a0ae81261217e3eb9d0ea4a5e3c07bdfa0aec881ae76cdc18a404f59701a4361",
-    "14-第二阶段500动作500回执97次攻击.png": "2b1389dece6dc8b32a7ba62c248ea08187be4cd079193a87c4c7103099080e7c"
+    "14-第二阶段500动作500回执97次攻击.png": "2b1389dece6dc8b32a7ba62c248ea08187be4cd079193a87c4c7103099080e7c",
+    "15-两阶段感知坐标与动作执行对应.png": "6616d601b5f282394af12659e5687b38260733fd48e141ac6dc2a39569993eb5"
+  },
+  "practice_precheck_evidence_complete": true,
+  "coordinate_example": {
+    "stage1": {
+      "tick0": [
+        1,
+        1
+      ],
+      "tick1": [
+        2,
+        1
+      ],
+      "action": "move right",
+      "receipt_tick": 0,
+      "receipt_matched": true
+    },
+    "stage2": {
+      "tick0": [
+        1,
+        1
+      ],
+      "tick1": [
+        2,
+        1
+      ],
+      "action": "move right",
+      "receipt_tick": 0,
+      "receipt_matched": true
+    }
   }
 }
