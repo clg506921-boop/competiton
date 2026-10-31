@@ -1,6 +1,6 @@
-# RMTC 参赛程序与提交材料（草稿）
+# RMTC 参赛程序与提交材料（v0.25.1-final 封版）
 
-当前代码基线：v0.25.1-tail-offer-fix，C++指纹1bf25f43ac4992484c5e。正式队名、队长、队伍编号、最终封版版本/提交号/运行路径待填。最新优化候选未混入本仓库。
+当前代码基线：v0.25.1-tail-offer-fix，C++指纹1bf25f43ac4992484c5e。正式队名：肥鱼说的都队；队长：蔡礼格；队伍编号：12。最终交付版本v0.25.1-final，容器内工程路径/opt/rmtc。最新优化候选未混入本仓库。
 
 ## 目录
 
@@ -71,3 +71,9 @@ stage字段分别为字符串"1"、"2"，不是另起参考车。每个席位只
 - 技术报告：[语雀导入稿](docs/submission/01-技术报告-语雀导入稿.md)
 - 语雀文档：https://www.yuque.com/ahz56/cbis6h/nlgzqv1hvhksyz2c（正文同步及权限核验待完成）
 - 当前仓库经队员确认公开上传；正式令牌和私有配置不得提交。
+
+## 最终封版交付
+
+代码已按队员要求冻结，不再混入后续候选。镜像与代码身份见 [release/release-identity.json](release/release-identity.json)。容器入口说明及最终脚本见 [release/start-final.sh](release/start-final.sh)。镜像包含原始Docker归档，文件较大，单独交付，不写入Git仓库。正式比赛参数和密钥使用包外私有配置。
+
+源码锚点提交：a8571dcccc9a931d94db555a85572203cb5ffb22；当前仓库后续提交为材料和封版说明更新，不改变生产代码。
