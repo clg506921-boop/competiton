@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-31",
+  "version": "v0.25.1-final",
+  "fingerprint": "1bf25f43ac4992484c5e",
+  "evidence_basis": "User-provided screenshots of own node log queries and official practice webpage; new raw run files have not been copied into this workspace",
+  "stage1": {
+    "session_id": "practice-2203c7cf8ac44bcc8e2951a169e42b7e",
+    "actions_published": 100,
+    "unique_receipts_matched": 100,
+    "invalid_actions": 0,
+    "score": 40
+  },
+  "stage2": {
+    "session_id": "practice-a07083a903084eaeb307fc8f72e66e52",
+    "actions_published": 500,
+    "unique_receipts_matched": 500,
+    "invalid_actions": 0,
+    "attacks": 97,
+    "score": 45,
+    "rank": 1,
+    "mock_successes": 35
+  },
+  "perception_position_screenshot_pending": true,
+  "official_ai_qualification_proven": false,
+  "wired_two_device_test_proven": false,
+  "production_code_changed": false,
+  "sha256": {
+    "01-最终镜像身份核验.png": "2cbf5c67158755e80c51496f5fa73ff2175ece517410b77543e8c03191fab9e0",
+    "08-默认DDS最终容器启动就绪.png": "35be66ae061b6f18e428da9213523ebf9266aeb278954f7625e9861a862017bd",
+    "06-最终镜像第一阶段40分与动作执行通过.png": "b653d1eeffb44f1a2a155e6b175defd74f7928072fa1109dead13388d9d730f7",
+    "07-最终镜像100动作100回执与场次Tick回填.png": "60d830d2d41832a0ef1591f8496be863756369f0c57dbc27d248b1a45de070a7",
+    "10-第二阶段mock最终镜像配置检查通过.png": "6f2f3ac9627f7066baf41ce49532dd4d8e6673bce3b7df9103fc1cd86d6f6b9f",
+    "13-第二阶段500Tick45分与最终攻击回执.png": "a0ae81261217e3eb9d0ea4a5e3c07bdfa0aec881ae76cdc18a404f59701a4361",
+    "14-第二阶段500动作500回执97次攻击.png": "2b1389dece6dc8b32a7ba62c248ea08187be4cd079193a87c4c7103099080e7c"
+  }
+}

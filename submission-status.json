@@ -42,5 +42,9 @@
   "yuque_verified_after_reload": true,
   "final_commit_scope": "Production source anchor; later commits only package/docs/status",
   "code_sealed": true,
-  "submission_final": true
+  "submission_final": true,
+  "final_practice_stage1_verified": true,
+  "final_practice_stage2_mock_verified": true,
+  "perception_position_screenshot_pending": true,
+  "latest_practice_evidence": "docs/submission/证据/最终镜像两阶段检录截图核验.json"
 }
